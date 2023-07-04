@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1>MY CODE</h1>
+<body>
+    <p>Hello this is my code snippet!</p>
+    <div id="demo"></div>
+   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+       $.ajax({ 
+        //url: "JSON\my.json", 
+        url: "https://jsonplaceholder.typicode.com/posts",
+        type:"GET",
+        success: function(data){
+            //$("#demo").append(data.id+ " "+ data.title+" "+data.body);
+            $.each(data, function(key, value){
+                
+                $("#demo").append(value.id+ " "+ value.title+ "<br>");
+                
+            })
+            
+        }
+       }) 
+    // $.getJSON(
+    //     https://jsonplaceholder.typicode.com/posts/,
+    //     function(data){
+    //         //$("#demo").append(data.id+ " "+ data.title+" "+data.body);
+    //         $.each(data, function(key, value){
+                
+    //             $("#demo").append(value.id+ " "+ value.title+ "<br>");
+                
+    //         })
+            
+    //     }
+
+    // )
+    })
+</script>
+  
+</body>
+</html>
